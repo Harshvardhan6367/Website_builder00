@@ -1,0 +1,142 @@
+/* src/components/CodeEditor/CodeEditor.css */
+.code-editor-container {
+  height: 100%;
+  position: relative;
+}
+
+.code-editor {
+  font-family: "Fira Code", "Fira Mono", "JetBrains Mono", monospace !important;
+  line-height: 1.5 !important;
+  font-variant-ligatures: none;
+}
+
+.code-editor textarea,
+.code-editor pre {
+  font-family: inherit !important;
+  line-height: inherit !important;
+  font-size: inherit !important;
+}
+
+.code-editor textarea {
+  outline: none;
+}
+
+/* Custom scrollbar for code editor */
+.code-editor pre,
+.code-editor textarea {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--surface);
+}
+
+.code-editor pre::-webkit-scrollbar,
+.code-editor textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-editor pre::-webkit-scrollbar-track,
+.code-editor textarea::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+.code-editor pre::-webkit-scrollbar-thumb,
+.code-editor textarea::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Syntax highlighting customizations */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.function,
+.token.class-name {
+  color: #dcdcaa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d16969;
+}
+
+/* Fix cursor position in the editor */
+.code-editor-textarea {
+  caret-color: #c0caf5 !important;
+  cursor: text !important;
+}
+
+.code-editor-textarea:focus {
+  outline: none !important;
+}
+
+/* Fix cursor position issue */
+.code-editor > textarea {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  resize: none !important;
+  overflow: auto !important;
+  padding: 15px !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: transparent !important;
+  white-space: pre !important;
+  word-wrap: normal !important;
+  z-index: 1 !important;
+}
+
+.code-editor > pre {
+  position: relative !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  padding: 15px !important;
+}
